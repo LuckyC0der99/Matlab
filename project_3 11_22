@@ -1,0 +1,47 @@
+clc
+clear all;
+%part one
+m1=input("\n输入m1:");
+m2=input("\n输入m2:");
+theta=input("\n输入theta：");
+[X]=AXB(m1,m2,theta);
+a1=X(1)
+a2=X(2)
+N1=X(3)
+N2=X(4)
+
+%part two
+y(1)=fn1(40)/(fn1(30)+fn1(20));
+y(2)=fn2(10);
+
+%part three
+A=rand(3000,1);
+Amean=mean(A);
+Astd=std(A);
+Amax=max(A);
+Amin=min(A);
+A05=size(find(A>0.5))/size(A);
+
+%part four
+h=[6 8 10 12 14 16 18];
+t=[18.0 20.0 22.0 15.0 30.0 28.0 24.0;15.0 19.0 24.00 28.0 34.0 32.0 30.0];
+time=6.5:2:18.5;
+T=spline(h,t,time);
+T(1,:)
+%室内为红色 ，室外为蓝色
+plot(time,T(1,:) ,'r',time,T(2,:), 'b',h,t,'*');
+title('室内外温度观测结果');
+xlabel('时间');
+ylabel('温度');
+
+%part five
+x=[1 11 21 31 41 51 61 71 81 91 101];
+lgx=[0 1.0414 1.3222 1.4914 1.6128 1.7076 1.7853 1.8513 1.9085 1.9510 2.0043];
+p=polyfit(x,lgx,5);
+px=polyval(p,x);
+plot(x,lgx,'o',x,px,'b');
+xlabel('x');
+ylabel('lgx')
+
+
+
