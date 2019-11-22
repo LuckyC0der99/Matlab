@@ -14,9 +14,31 @@ a2=X(2)
 N1=X(3)
 N2=X(4)
 
+function [X] = AXB(m1,m2,theta)
+    A=[m1*cos(theta) -m1 -sin(theta) 0;m1*sin(theta) 0 cos(theta) 0;0 m2 -sin(theta) 0; 0 0 cos(theta) 1];
+    B=[0 m1*9.8 0 m2*9.8];
+    X=A/B;
+end
+
+
 %part two
 y(1)=fn1(40)/(fn1(30)+fn1(20));
 y(2)=fn2(10);
+
+function f = fn1(n)
+%在matlab中ln表示成了log!
+    f=n+10*log(n^2+5);
+end
+
+function f = fn2(n)
+    f=0;
+    for i=1:n
+        f1=i*(i+1);
+        f=f+f1;
+    end
+end
+
+
 
 %part three
 A=rand(3000,1);
