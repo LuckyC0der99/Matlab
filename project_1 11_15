@@ -1,0 +1,23 @@
+%WRITE BY CJL
+%2019 11 15
+ 
+ 1.m
+clc
+clear all;
+
+%myTest1.m
+clc
+X=[1 2 3;4 5 6 ;7 8 9]
+Xmax=max(max(X))
+Xmin=min(min(X))
+%myTest2.m
+clc
+Y(1,1)={[1 2;3 4]}
+Y(1,2)={[1 2 3]}
+Y(2,1)={'word'}
+Y(2,2)={2+3i}
+%myTest3.m
+student=struct('ID',{'123','456'},'name',{'Wang','Li'},'age',{'23,10'});
+student(1)
+student(1).ID
+student(2).age
